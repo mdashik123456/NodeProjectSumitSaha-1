@@ -9,7 +9,7 @@
 
 //Dependencies
 const http = require("http");
-const url = require("url");
+const {handleReqRes} = require('./helpers/handleReqRes.js');
 
 //App object - module scaffolding
 const app = {};
@@ -22,6 +22,7 @@ app.config = {
 // create server
 app.createServer = () => {
     const server = http.createServer(app.handleReqRes);
+    
     server.listen(app.config.PORT, () => {
         console.log(`Listening on port ${app.config.PORT}`);
         console.log(`Address is: http://localhost:${app.config.PORT}`);
@@ -29,10 +30,7 @@ app.createServer = () => {
 }
 
 // Handle Request Response
-app.handleReqRes = (req, res) => {
-    
-    res.end("Hello world!");
-}
+app.handleReqRes = handleReqRes;
 
 //start server
 app.createServer();
