@@ -25,7 +25,7 @@ handler.handleReqRes = (req, res) => {
     const queryStringParams = parsedURL.query;
     const headersObj = req.headers;
 
-    const requestProperties = { // This  object will hold all the properties of a HTTP request for further use in other modules.
+    const requestProperties = { // This  object will hold all the properties of a HTTP request for further use in other modules
         parsedURL,
         path,
         trimedPath,
