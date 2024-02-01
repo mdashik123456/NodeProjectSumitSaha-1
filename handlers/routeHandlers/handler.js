@@ -31,27 +31,16 @@ handler.userHandler = (requestProperties, callback) => {
 handler._users = {};
 
 handler._users.get = (requestProperties, callback) => {
-    callback(202,{
-        method : requestProperties.method,
-    });
+ 
 }
 handler._users.post = (requestProperties, callback) => {
-    callback(202,{
-        method : requestProperties.method,
-    });
-    
+     
 }
-handler._users.put = (requestProperties, callback) => {
-    callback(202,{
-        method : requestProperties.method,
-    });
+handler._users.put = (requestProperties, callback) => { 
     
 }
 handler._users.delete = (requestProperties, callback) => {
-    callback(202,{
-        method : requestProperties.method,
-    });
-
+    
 }
 
 module.exports = handler;

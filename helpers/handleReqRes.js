@@ -12,6 +12,7 @@ const url = require("url");
 const { StringDecoder } = require('node:string_decoder'); 
 const routes =  require("../routes");
 const {notFoundHandler} =  require("../handlers/routeHandlers/noteFoundHandler");
+const utilities = require('../helpers/utilities');
 
 //module scaffolding  
 const handler = {};
@@ -46,7 +47,9 @@ handler.handleReqRes = (req, res) => {
 
     req.on('end', ()=>{
         realData += decoder.end(); // after finishing decoding we must have to end the decoder after real data
-        // console.log(realData);
+        
+        // for sending realData to handlers/routeHandlers/handler.js
+        requestProperties.body = utilities.parseJSON(realData);
 
         chosenHandler(requestProperties, (statusCode, payload)=>{
             statusCode = typeof(statusCode) === "number" ? statusCode : 500;
