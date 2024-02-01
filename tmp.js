@@ -9,21 +9,11 @@
 
 //Dependencies
 
-const { StringDecoder } = require('node:string_decoder');
+const fs = require('fs');
 
-const decoder = new StringDecoder('utf-8'); //  for handling encoding
-let realData = "";
-
-req.on('data', (chank) => {
-    realData += decoder.write(chank); // string decoding from buffer
+fs.truncate('tmp.txt', 9, ()=>{
+    console.log("File tmp.txt is cleared");
 });
-
-req.on('end', () => {
-    realData += decoder.end(); // after finishing decoding we must have to end the decoder after real data
-    console.log(realData);
-    res.end("Hello world!");
-});
-
 
 
 
