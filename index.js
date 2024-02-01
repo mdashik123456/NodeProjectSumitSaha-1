@@ -13,6 +13,11 @@ const {handleReqRes} = require('./helpers/handleReqRes.js');
 const environments = require('./helpers/environments.js');
 const data = require('./lib/data');
 
+//testing
+// data.createDataFile('test', 'file', {name:'ashik',age:23}, (err)=>{
+//     console.log(err);
+// });
+
 //App object - module scaffolding
 const app = {};
 

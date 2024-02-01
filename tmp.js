@@ -10,10 +10,7 @@
 //Dependencies
 
 const fs = require('fs');
-
-fs.truncate('tmp.txt', 9, ()=>{
-    console.log("File tmp.txt is cleared");
-});
-
+data= {name:'ashik',age:23}
+console.log(JSON.stringify(data));
 
 
