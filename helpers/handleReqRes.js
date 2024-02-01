@@ -21,7 +21,7 @@ handler.handleReqRes = (req, res) => {
     const parsedURL = url.parse(req.url, true); // this  will return an object with various properties like pathname and query
     const path = parsedURL.pathname;
     const trimedPath =  path.replace(/^\/+|\/+$/g, ""); // this will remove '/' from start and end from url pathname
-    const method =  req.method;
+    const method =  req.method.toLowerCase();
     const queryStringParams = parsedURL.query;
     const headersObj = req.headers;
 
@@ -55,12 +55,13 @@ handler.handleReqRes = (req, res) => {
             payloadString = JSON.stringify(payload);
     
             // Return FInal Response
+            res.setHeader('Content-Type', 'Application/json');
             res.writeHead(statusCode);
             res.end(payloadString);
     
         });
 
-        res.end("Hello world!");
+        // res.end("Hello world!");
     });
     
 }

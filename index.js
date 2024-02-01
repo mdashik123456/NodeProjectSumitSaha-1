@@ -14,7 +14,7 @@ const environments = require('./helpers/environments.js');
 const data = require('./lib/data');
 
 //testing
-// data.createDataFile('test', 'file', {name:'ashik',age:23}, (err)=>{
+// data.createDataFile('test', 'file', {'name':'ashik','age':'23'}, (err)=>{
 //     console.log(err);
 // });
 

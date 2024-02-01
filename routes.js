@@ -11,7 +11,8 @@
 const handler = require('./handlers/routeHandlers/handler');
 
 const routes = {
-    'sample' : handler.sampleHandler
+    'sample' : handler.sampleHandler,
+    'user':handler.userHandler
 };
 
 module.exports = routes;
