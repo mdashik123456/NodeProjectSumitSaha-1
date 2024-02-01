@@ -21,7 +21,7 @@ handler.userHandler = (requestProperties, callback) => {
     // console.log(requestProperties);
     const acceptedMethods = ['get', 'post', 'put', 'delete'];
     if (acceptedMethods.indexOf(requestProperties.method) + 1) {
-
+        handler._users[requestProperties.method](requestProperties, callback);
     } else {
         callback(404);
     }
@@ -31,15 +31,26 @@ handler.userHandler = (requestProperties, callback) => {
 handler._users = {};
 
 handler._users.get = (requestProperties, callback) => {
-
+    callback(202,{
+        method : requestProperties.method,
+    });
 }
 handler._users.post = (requestProperties, callback) => {
-
+    callback(202,{
+        method : requestProperties.method,
+    });
+    
 }
 handler._users.put = (requestProperties, callback) => {
-
+    callback(202,{
+        method : requestProperties.method,
+    });
+    
 }
 handler._users.delete = (requestProperties, callback) => {
+    callback(202,{
+        method : requestProperties.method,
+    });
 
 }
 
